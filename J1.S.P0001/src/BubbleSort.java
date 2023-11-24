@@ -16,9 +16,12 @@ public class BubbleSort {
     public static void main(String[] args) {
         int size_array = getInt("Enter a positive decimal number: ");
         int[] array = createArray(size_array);
-        System.out.print("Unsort array: [");
+        System.out.print("Unsort array: ");
         display(array);
-        System.out.print("]");
+    }
+    
+    public static void bubbleSort(int[] array) {
+        
     }
     
     public static int[] createArray (int size_array) {
@@ -32,9 +35,12 @@ public class BubbleSort {
     
     public static void display(int[] arr){
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(", ");
+            if (i == 0) {
+                System.out.print("[" + arr[i] + ", ");
+            } else if (i == arr.length - 1) {
+                System.out.print(arr[i] + "]");
+            }else {
+                System.out.print(arr[i] + ", ");
             }
         }
     }
