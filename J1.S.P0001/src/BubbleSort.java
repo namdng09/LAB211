@@ -23,9 +23,9 @@ public class BubbleSort {
     
     public static int[] createArray (int size_array) {
         int[] array = new int[size_array];
-        Random rd = new Random(100);
+        Random rd = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = rd.nextInt();
+            array[i] = rd.nextInt(100);
         }
         return array;
     } 
@@ -50,7 +50,7 @@ public class BubbleSort {
                 System.out.println("Invalid number!!");
                 sc.nextLine();
             }
-        } while (number < 0 || isDecimal("" + number));
+        } while (number < 0 || !isDecimal("" + number));
         return (int) number;
     }
     
