@@ -18,9 +18,25 @@ public class BubbleSort {
         int[] array = createArray(size_array);
         System.out.print("Unsort array: ");
         display(array);
+        System.out.println();
+        bubbleSort(array);
+        System.out.print("Sorted array: ");
+        display(array);
     }
     
     public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j+1]) {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+    
+    public static void swap(int x, int y) {
         
     }
     
