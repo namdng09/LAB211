@@ -12,11 +12,11 @@ import java.util.Random;
  * @author DELL VOSTRO 5630
  */
 public class LinearSearch {
-    public static void searchNumber(int[] array, int searchValue) {
+    public static void searchNumber(int[] array, int number) {
         boolean flag = false;
         for (int i = 0; i < array.length; i++) {
-            if (searchValue == array[i]) {
-                System.out.format("Found %d at index: %d", searchValue, i);
+            if (number == array[i]) {
+                System.out.format("Found %d at index: %d", number, i);
                 flag = true;
                 break;
             }
