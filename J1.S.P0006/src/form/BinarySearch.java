@@ -14,7 +14,7 @@ public class BinarySearch {
         if (left_index > right_index) {
             return -1;
         }
-        int mid_index = left_index  + ((right_index - left_index) / 2);
+        int mid_index = (left_index + right_index) / 2;
         
         if (searched_value == array[mid_index]) {
             return mid_index;
