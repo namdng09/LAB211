@@ -41,7 +41,11 @@ public class BinarySearch {
         }
         
     }
-    
+    /**
+     * This function checks if an array is sorted
+     * @param array the array that needs checking
+     * @return 
+     */
     private static boolean isSortAscending(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] > array[i+1]) {
