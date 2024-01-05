@@ -38,6 +38,6 @@ public class Main {
         Input.displayArray(array);
         
         ////Display the index of search number in array.
-        System.out.println(BinarySearch.binarySearch(array, 0, array.length-1, searchValue));
+        System.out.println(BinarySearch.binarySearch(array, searchValue, 0, array.length-1));
     }
 }
