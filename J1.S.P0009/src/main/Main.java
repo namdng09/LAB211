@@ -14,6 +14,8 @@ import algorithm.Fibonacci;
 public class Main {
     //the main of the class
     public static void main(String[] args) {
-        Fibonacci.fibonacci2(45, 1, 0, 0);
+//        int result = Fibonacci.fibonacci2(45, 1, 0, 0);
+//        System.out.println(result);
+        Fibonacci.fibonacci3(45);
     }
 }

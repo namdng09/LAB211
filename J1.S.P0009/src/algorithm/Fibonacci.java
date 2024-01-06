@@ -25,6 +25,8 @@ public class Fibonacci {
         }
     }
     
+    
+    
     public static int fibonacci2(int number, int lower, int higher, int position) {
         System.out.print(higher + " ");
         System.out.println("index: " + position);
@@ -32,5 +34,20 @@ public class Fibonacci {
             return higher;
         }
         return fibonacci2(number - 1, higher, higher + lower, position + 1);
+    }
+    
+    
+    private static int lower = 0;
+    private static int higher = 1;
+    private static int nextTerm;
+    public static void fibonacci3 (int count) {
+        if (count > 0) {
+            System.out.println(nextTerm + " ");
+            
+            lower = higher;
+            higher = nextTerm;
+            nextTerm = lower + higher;
+            fibonacci3(count-1);
+        }
     }
 }
