@@ -13,7 +13,7 @@ import input.Input;
  * @author DELL VOSTRO 5630
  */
 public class Main {
-    
+    // the main entry point of program
     public static void main(String[] args) {
         int sizeOfArray = Input.getPositiveNumber("Enter number of array:",
                 "Size of array must be Postive Decimal Number", 1, Integer.MAX_VALUE);
