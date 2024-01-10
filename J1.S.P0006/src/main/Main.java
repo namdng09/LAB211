@@ -7,7 +7,6 @@ package main;
 
 import form.BinarySearch;
 import input.Input;
-import java.util.Random;
 
 /**
  *

@@ -11,7 +11,7 @@ package form;
  */
 public class BinarySearch {
     /**
-     * This function use to search value by using binary search.
+     * This function use to search index of value in array by using binary search.
      * @param array the array to find out
      * @param number the search value
      * @param leftIndex the left index of element in array
@@ -22,7 +22,7 @@ public class BinarySearch {
         if (!isSortAscending(array)) {
             System.out.println("Array is not sorted. "
                     + "Binary search may not work correctly.");
-            return -1;
+            //return -1;
         }
         //Get the middle elements by index
         if (rightIndex >= leftIndex) {
