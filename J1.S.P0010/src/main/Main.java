@@ -18,11 +18,11 @@ public class Main {
     
     public static void main(String[] args) {
         //Display a screen to ask users to enter a number of array and a search number. 
-        int sizeOfArray = Input.getInteger("Enter number of array: ", 
+        int sizeOfArray = Input.getPositiveNumber("Enter number of array: ", 
                 "Size of array must be Positive decimal number", MIN, MAX);
         
         //Display a screen to ask users to enter search value. 
-        int searchValue = Input.getInteger("Enter search value: ", 
+        int searchValue = Input.getPositiveNumber("Enter search value: ", 
                 "Search value must be Positive decimal number", 0, Integer.MAX_VALUE);
         
         //Generate random integer in number range for each array element.
