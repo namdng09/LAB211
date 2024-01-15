@@ -24,12 +24,12 @@ public class Main {
         int[] array = SelectionSort.createArrayByRandomNumber(sizeOfArray);
                 
         //Display array before sorting
-        SelectionSort.displayAraay("Unsorted array: ", array);
+        SelectionSort.displayArray("Unsorted array: ", array);
         
         //Sort the array
         SelectionSort.sortArray(array);
         
         //Display array after sorting
-        SelectionSort.displayAraay("Sorted array: ", array);
+        SelectionSort.displayArray("Sorted array: ", array);
     }
 }
