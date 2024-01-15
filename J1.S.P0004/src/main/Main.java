@@ -24,12 +24,12 @@ public class Main {
         int[] array = QuickSort.createArrayByRandomNumber(sizeOfArray);
                 
         //Display array before sorting
-        QuickSort.displayAraay("Unsorted array: ", array);
+        QuickSort.displayArray("Unsorted array: ", array);
         
         //Sort the array
         QuickSort.sortArray(array, 0, array.length - 1);
         
         //Display array after sorting
-        QuickSort.displayAraay("Sorted array: ", array);
+        QuickSort.displayArray("Sorted array: ", array);
     }
 }

@@ -34,7 +34,7 @@ public class QuickSort {
     * @param message The message to be displayed before the array elements.
     * @param array   The integer array whose elements are to be displayed.
     */
-    public static void displayAraay (String message, int[] array) {
+    public static void displayArray (String message, int[] array) {
         // Print the custom message
         System.out.print(message);
         
@@ -124,7 +124,7 @@ public class QuickSort {
                 array[leftIndex] = array[rightIndex];
                 array[rightIndex] = temp;
                 
-                displayAraay("s:", array);
+                displayArray("s:", array);
                 
                 leftIndex++;
                 rightIndex--;
