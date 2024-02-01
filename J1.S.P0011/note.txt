@@ -1,0 +1,14 @@
+J1.S.P0011/
+
+yêu cầu về Input:
+- làm một hàm nhập getInteger: 4 tham số chính, message, error, min, max
+- 1 method nhập vào số cần chuyển, yêu cầu kiểm tra xem có đúng hợp lệ base không
+- làm một hàm kiểm tra xem có muốn chạy tiếp không: inputYesNoOption(1/0); Yes/No
+
+yêu cầu về BaseConvert
+- giá trị của originBase và convertBase để private, cần có contrucstor và get.
+- các method liên quan không dùng ngoài class thì để private
+- viết 1 method _convertTo10 để chuyển các base sang decimal number
+- viết 1 method _convertFrom10 để chuyển sang các base từ decimal number
+- viết 1 method convert 
+- 1 hàm để kiểm tra xem String nhập vào có hợp lệ không
