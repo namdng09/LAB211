@@ -10,30 +10,12 @@ package model;
  * @author DELL VOSTRO 5630
  */
 public class BaseConvert {
-    private final String DIGITS = "0123456789ABCDEFGHỊKLMNOPQRSTUVWXYZ";
-    private final int MAX_BASE = 32;
-    private final int MIN_BASE = 2;
-    
+    private final String DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private int originBase;
     private int convertBase;
-
     
-    private boolean _isValidBase(int base) {
-        return ((base >= MIN_BASE) && (base <= MAX_BASE));
-    }
-    
-    private String _getInvalidMessage(int base) {
-        return String.format("Invald base! base = %d is not in [%d, %d]", base, MIN_BASE, MAX_BASE);
-    }
-    public BaseConvert(int originBase, int convertBase) throws Exception {
-        if (!_isValidBase(originBase)) {
-            throw new Exception(_getInvalidMessage(originBase));
-        }
+    public BaseConvert(int originBase, int convertBase) {
         this.originBase = originBase;
-        
-        if (!_isValidBase(convertBase)) {
-            throw new Exception(_getInvalidMessage(convertBase));
-        }
         this.convertBase = convertBase;
     }
 
@@ -45,27 +27,31 @@ public class BaseConvert {
         return convertBase;
     }
     
-    private boolean _isValidConvertNumber(String number) {
+    private int _convertToDec(String number) {
+        int decimalNumber = 0;
         for (int i = 0; i < number.length(); i++) {
-            int digit = DIGITS.indexOf(number.charAt(i));
-            if (digit < 0 || digit > this.originBase) {
-                return false;
-            }
+            decimalNumber += DIGITS.indexOf(number.charAt(i)) * Math.pow(this.originBase, i);
         }
-        return true;
+        return decimalNumber;
     }
     
-    private int _convertTo10(String number) {
-        return 1;
-    }
-    
-    public String convert(String number) throws Exception{
-        if (!_isValidConvertNumber(number)) {
-            throw new Exception("InValid number, original base = " + this.originBase); 
+    private String _convertFromDec(int number) {
+        String convertNumber = "";
+        while (number > 0) {
+            int digit = number % this.convertBase;
+            number /= this.convertBase;
+            convertNumber = DIGITS.charAt(digit) + convertNumber;
         }
-        return "";
+        return convertNumber;
     }
     
-    
-    
+    public String convert(String number) {
+        number = number.toUpperCase();
+        if (this.originBase == this.convertBase) {
+            return number;
+        }
+        int base10 = (this.originBase == 10) ? Integer.parseInt(number) : this._convertToDec(number);
+        String convertNumber = (this.convertBase == 10) ? String.valueOf(base10) : this._convertFromDec(base10);
+        return convertNumber;
+    }
 }

@@ -5,9 +5,8 @@
  */
 package controller;
 
-import java.io.IOException;
 import model.BaseConvert;
-import view.Input;
+import view.NumberSystemView;
 
 /**
  *
@@ -15,59 +14,21 @@ import view.Input;
  */
 public class MainForm extends Form{
 
-    /**
-     *
-     * @return
-     */
+    NumberSystemView view = new NumberSystemView();
+    BaseConvert converter = null;
+    
     @Override
     public STATUS setup() {
-        Input inputObject = new Input();
-        int original = inputObject.inputBase("Choose the original base number: ");
-        int convert = inputObject.inputBase("Choose the convert base number: ");
-
-        BaseConvert converter = null;
-        try {
-            converter = new BaseConvert(original, convert);
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
-        }
+        int original = view.inputBaseNumber("Choose original Base: ");
+        int convert = view.inputBaseNumber("Choose convert Base: ");
         
-        String number = null;
-        while (true) {
-            try {
-                number = inputObject.inputConvertNumber("Enter the number: ");
-                break;
-            } catch (IOException e) {
-                System.out.println("ERROR: " + e.getMessage());
-            }
-        }
+        converter = new BaseConvert(original, convert);
         
-        try {
-            System.out.println(number + " (" + converter.getOriginBase() + ") = " + converter.convert(number) + " (" + converter.getConvertBase() + ")");
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
-        }
+        String convertNumber = view.inputConvertNumber("Enter number: ", converter.getOriginBase());
         
-        int option = 0;        
-        while (true) {
-            try {
-                option = inputObject.inputYesNoOption(
-                        "Do you want to continue, YES/NO (1/0): ");
-                break;
-            } catch (Exception e) {
-                System.out.println("ERROR: " + e.getMessage());
-            }
-        }
-
-        switch (option) {
-            case Input.YES_OPTION:
-                return STATUS.CONTINUE;
-            case Input.NO_OPTION:
-                return STATUS.EXIT;
-        }
-
-        return STATUS.CONTINUE;
+        System.out.println(converter.convert(convertNumber));
+        
+        return STATUS.EXIT;
     }
-
     
 }

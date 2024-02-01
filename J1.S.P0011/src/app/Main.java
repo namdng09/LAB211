@@ -7,7 +7,6 @@ package app;
 
 import controller.MainForm;
 
-
 /**
  *
  * @author DELL VOSTRO 5630
