@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author DELL VOSTRO 5630
  */
 public class Validation {
-    private final String DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public final String DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private Scanner scanner = new Scanner(System.in);
     
     public int inputInteger(String message, int min, int max) throws NumberFormatException, Exception {
