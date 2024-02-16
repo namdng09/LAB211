@@ -39,10 +39,7 @@ public class MatrixCalculationView {
     public void inputMatrixValues(Matrix matrix) {
         for (int r = 0; r < matrix.getRow(); r++) {
             for (int c = 0; c < matrix.getColumn(); c++) {
-                matrix.setValueAt(
-                        r, 
-                        c, 
-                        input.getDouble(
+                matrix.setValueAt(r, c, input.getDouble(
                                 String.format(
                                         "Enter Matrix[%d][%d]: ", 
                                         r + 1, 
