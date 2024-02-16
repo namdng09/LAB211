@@ -42,6 +42,7 @@ public class OperatorForm extends Form{
         view.inputMatrixValues(matrix_2);
         
         Matrix matrixResult = operator.compute(matrix_1, matrix_2);
+        
         System.out.println(matrixResult);
         
         return STATUS.EXIT;

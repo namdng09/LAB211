@@ -31,7 +31,7 @@ public class MainForm extends Form{
     
     @Override
     public STATUS setup() {
-        OPTION choice = (OPTION) view.inputOption(OPTION.values());
+        OPTION choice = (OPTION) view.inputOption("Your choice: ",OPTION.values());
         
         switch (choice) {
             case ADDITION:

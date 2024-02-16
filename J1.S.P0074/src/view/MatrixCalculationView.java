@@ -23,10 +23,10 @@ public class MatrixCalculationView {
                 + "4. Quit");
     }
     
-    public Object inputOption(Object[] options){
+    public Object inputOption(String message, Object[] options){
         Object object;
         displayMenu();
-        object = options[input.getInteger("Your choice: ", 1, 4) - 1];
+        object = options[input.getInteger(message, 1, options.length) - 1];
         return object;
     } 
     public Matrix inputInitializeMatrix() {
@@ -47,4 +47,5 @@ public class MatrixCalculationView {
             }
         }
     }
+    
 }
