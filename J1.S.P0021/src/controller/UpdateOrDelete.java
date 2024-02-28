@@ -6,6 +6,7 @@
 package controller;
 
 import model.Student;
+import model.fileIO.StudentFileChanger;
 import model.formatter.StudentDisplayFormatter;
 import model.manager.StudentManager;
 import utility.Utility;
@@ -19,6 +20,7 @@ public class UpdateOrDelete extends Form {
     private StudentManagementView view = new StudentManagementView();
     private StudentDisplayFormatter formatter = new StudentDisplayFormatter();
     private Utility utils = new Utility();
+    private StudentFileChanger changer = new StudentFileChanger();
     
     private enum ACTION {
         UPDATE,
@@ -64,6 +66,7 @@ public class UpdateOrDelete extends Form {
             case DELETE:
                 try {
                     StudentManager.getInstance().delete(searchStudent);
+                    changer.deleteLine(searchStudent);
                 } catch (Exception e) {
                     System.out.println("ERROR: " + e.getMessage());
                 }

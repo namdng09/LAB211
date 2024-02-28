@@ -11,4 +11,5 @@ package model;
  */
 public class PathData {
     public final static String STUDENT_PATH = "src/model/student.txt";
+    public final static String TEMP_PATH = "src/model/tempFile.txt";
 }

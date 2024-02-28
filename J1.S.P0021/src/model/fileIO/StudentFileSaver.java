@@ -26,8 +26,7 @@ public class StudentFileSaver implements IFileSavable<StudentManager>{
     public void append(StudentManager manager) throws Exception {
         StudentFileFormatter formatter = new StudentFileFormatter();
         BufferedWriter writer = new BufferedWriter(new FileWriter(this.path, true));
-        
-        writer.append(formatter.formatTo(manager.getStudent(manager.size() - 1)) + "\n");
+        writer.append("\n" + formatter.formatTo(manager.getStudent(manager.size() - 1)));
         writer.close();
     }
     
