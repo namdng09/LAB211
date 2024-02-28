@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app;
-
-import controller.MainForm;
+package model;
 
 /**
  *
  * @author namdng09
  */
-public class Main {
-    public static void main(String[] args) {
-        MainForm mainForm = new MainForm();
-        mainForm.setup();
-        mainForm.loop();
-    }
+public class PathData {
+    public final static String STUDENT_PATH = "src/model/student.txt";
 }

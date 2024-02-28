@@ -80,7 +80,7 @@ public class Utility implements IFormatter<String>{
         for (String word : words) {
             stringBuilder.append(word.substring(0,1).toUpperCase()).append(word.substring(1).toLowerCase()).append(" ");
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString().trim();
     }
 
     @Override

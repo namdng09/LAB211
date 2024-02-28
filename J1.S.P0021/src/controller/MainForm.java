@@ -5,6 +5,7 @@
  */
 package controller;
 
+import model.fileIO.StudentFileLoader;
 import view.StudentManagementView;
 import view.StudentManagementView.OPTIONS;
 
@@ -18,7 +19,15 @@ public class MainForm extends Form{
     
     @Override
     public void setup() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.print("LOADING STUDENT...");
+        try {
+            StudentFileLoader.getInstance().load();
+            System.out.print("DONE\n");
+        } catch (Exception e) {
+            System.out.println("FAIL");
+            System.out.println("ERROR: " + e.getMessage());
+            System.exit(0);
+        }
     }
 
     @Override

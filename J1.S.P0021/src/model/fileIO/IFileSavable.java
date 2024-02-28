@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app;
-
-import controller.MainForm;
+package model.fileIO;
 
 /**
  *
  * @author namdng09
  */
-public class Main {
-    public static void main(String[] args) {
-        MainForm mainForm = new MainForm();
-        mainForm.setup();
-        mainForm.loop();
-    }
+public interface IFileSavable<E> {
+    /**
+     * append data of element to file
+     * @param e
+     * @throws Exception 
+     */
+    public void append(E e) throws Exception;
 }

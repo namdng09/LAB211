@@ -5,6 +5,8 @@
  */
 package controller;
 
+import model.PathData;
+import model.fileIO.StudentFileSaver;
 import model.manager.StudentManager;
 import view.StudentManagementView;
 
@@ -25,6 +27,8 @@ public class CreateNewStudent extends Form{
         StudentManager manager = StudentManager.getInstance();
         try {
             manager.insert(view.inputStudent("---------- ADD STUDENT ----------"));
+            StudentFileSaver studentSaver = new StudentFileSaver(PathData.STUDENT_PATH);
+            studentSaver.append(manager);
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
