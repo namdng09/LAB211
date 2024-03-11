@@ -6,7 +6,9 @@
 package view;
 
 import controller.OPTIONS;
+import java.util.ArrayList;
 import model.Fruit;
+import model.manager.FruitManager;
 import utility.Utility;
 
 
@@ -46,5 +48,20 @@ public class FruitManagementView {
     
     public int inputYesNoOption(String message){
         return utils.getInteger(message, FruitManagementView.NO_OPTION, FruitManagementView.YES_OPTION);
+    }
+    
+    
+    public void displayListOfFruit(FruitManager manager) {
+        System.out.println("| ++ Item ++ | ++ Fruit Name ++ | ++ Origin ++ | ++ Price ++ |");
+        for (Fruit fruit : manager) {
+            System.out.println(utils.formatListOrder(fruit));
+        }
+    }
+    
+    public void displaySelectedFruit(ArrayList<Fruit> listOfFruits) {
+        System.out.println("Product | Quantity | Price | Amount");
+        for (Fruit fruit : listOfFruits) {
+            System.out.println(utils.formatSelectedFruit(fruit));
+        }
     }
 }

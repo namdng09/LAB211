@@ -10,6 +10,7 @@ import java.util.Map;
 import model.Fruit;
 import model.manager.OrderManager;
 import utility.Utility;
+import view.FruitManagementView;
 
 /**
  *
@@ -19,24 +20,23 @@ public class ViewOrder extends Form{
 
     @Override
     public STATUS_PROGRAM setup() {
-        Utility utils = new Utility();
+        FruitManagementView view = new FruitManagementView();
         OrderManager orderManager = OrderManager.getInstance();
         
-        if (orderManager.size() == 0) {
+        if (orderManager.isEmpty()) {
             System.out.println("List of Order is empty!");
             return STATUS_PROGRAM.EXIT_LOOP;
         }
+        
         for (Map.Entry<String, ArrayList<Fruit>> entry : orderManager) {
+            // Display name of customer
             System.out.println("Customer: " + entry.getKey());
-            System.out.println("Product | Quantity | Price | Amount");
-            for (Fruit fruit : entry.getValue()) {
-                System.out.println(utils.formatSelectedFruit(fruit));
-            }
-            double totalPrice = 0;
-            for (Fruit fruit : entry.getValue()) {
-                totalPrice += fruit.getPrice() * fruit.getQuantity();
-            }
-            System.out.format("Total: %.2f$\n", totalPrice);
+            
+            // Display the list selected fruit
+            view.displaySelectedFruit(entry.getValue());
+            
+            // Print the total price
+            orderManager.printTotalPrice(entry.getValue());
         }
         
         return STATUS_PROGRAM.EXIT_LOOP;

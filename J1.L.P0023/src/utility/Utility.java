@@ -109,7 +109,7 @@ public class Utility {
     }
     
     public String formatSelectedFruit(Fruit fruit) {
-        return String.format("%-15s|%-8s|%-7s|%-6.2f", 
+        return String.format("%-8s| %-9s| %-6s| %-6.2f", 
             fruit.getFruitName(),
             fruit.getQuantity(),
             fruit.getPrice(),

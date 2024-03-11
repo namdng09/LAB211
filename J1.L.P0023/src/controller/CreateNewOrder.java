@@ -30,38 +30,43 @@ public class CreateNewOrder extends Form{
         // Display the list of Fruit
         while (true) {   
             // check if no fruit in program
-            if (manager.size() == 0) {
+            if (manager.isEmpty()) {
                 System.out.println("The list of fruit is empty!");
                 return STATUS_PROGRAM.EXIT_LOOP;
             }
             
-            System.out.println("| ++ Item ++ | ++ Fruit Name ++ | ++ Origin ++ | ++ Price ++ |");
-            for (Fruit fruit : manager) {
-                System.out.println(utils.formatListOrder(fruit));
-            }
+            // Select the item and display the selected fruit
+            view.displayListOfFruit(manager);
             
-            int choice = utils.getInteger("Choose an item you want to buy 1 -> " + manager.size() + ": ", 1, manager.size());
-            Fruit selectedFruit = manager.getFruit(choice - 1);
+            Fruit selectedFruit = manager.getFruit(
+                    utils.getInteger(
+                            "Choose an item you want to buy 1 -> " + manager.size() + ": ", 
+                            1, 
+                            manager.size()) - 1);
             
             // Set the quantity of selectedFruit
-            selectedFruit.setQuantity(utils.getInteger("Please input quantity: ", 1, selectedFruit.getQuantity()));
+            selectedFruit.setQuantity(
+                    utils.getInteger("Please input quantity: ", 
+                            1, 
+                            selectedFruit.getQuantity()));
             
+            // Add selectedFruit to array list to store
             listOfSelectedFruit.add(selectedFruit);
             
+            // Input yes or no to continue ordering
             int choose = view.inputYesNoOption("Do you want to order now? YES/NO (1/0)?: ");
             switch (choose) {
                 case FruitManagementView.YES_OPTION:
-                    System.out.println("Product | Quantity | Price | Amount");
-                    for (Fruit fruit : listOfSelectedFruit) {
-                        System.out.println(utils.formatSelectedFruit(fruit));
-                    }
-                    double totalPrice = 0;
-                    for (Fruit fruit : listOfSelectedFruit) {
-                        totalPrice += fruit.getPrice() * fruit.getQuantity();
-                    }
-                    System.out.format("Total: %.2f$\n", totalPrice);
+                    // Display the order and total
+                    view.displaySelectedFruit(listOfSelectedFruit);
+                    
+                    // Print the total price
+                    orderManager.printTotalPrice(listOfSelectedFruit);
+                    
+                    // input the name of customer
                     String nameOfCustomer = utils.getNameString("Enter your name: ");
                     try {
+                        // put to hashtable
                         orderManager.insertOrderList(listOfSelectedFruit, nameOfCustomer);
                     } catch (Exception e) {
                         System.out.println("ERROR: " + e.getMessage());
@@ -73,17 +78,17 @@ public class CreateNewOrder extends Form{
         
             break;
         }
-        // Select the item and display the selected fruit
         
-        // input the quantity
         
-        // Input yes or no to continue ordering
         
-        // Display the order and total
         
-        // input the name of customer
         
-        // put to hashtable
+        
+        
+        
+        
+        
+        
         
         return STATUS_PROGRAM.EXIT_LOOP;
     }

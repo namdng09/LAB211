@@ -24,6 +24,15 @@ public class FruitManager extends ListFruits{
         return instance;
     }
     
+    public boolean isEmpty() {
+        boolean flag = false;
+        if (size() == 0) {
+            flag = true;
+            return flag;
+        }
+        return flag;
+    } 
+    
     public Fruit findFirst(IIdentify<Fruit> identify) {
         for (Fruit fruit : this.listOfFruits) {
             if (identify.isFound(fruit)) {

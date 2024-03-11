@@ -24,6 +24,23 @@ public class OrderManager extends ListOrders{
         return instance;
     }
     
+    public boolean isEmpty() {
+        boolean flag = false;
+        if (size() == 0) {
+            flag = true;
+            return flag;
+        }
+        return flag;
+    }
+    
+    public void printTotalPrice(ArrayList<Fruit> listOfFruits) {
+        double totalPrice = 0;
+            for (Fruit fruit : listOfFruits) {
+                totalPrice += fruit.getPrice() * fruit.getQuantity();
+            }
+            System.out.format("Total: %.2f$\n", totalPrice);
+    }
+    
     public void insertOrderList(ArrayList<Fruit> listOfFruit, String name) throws Exception{
         this.listOfOrders.put(name, listOfFruit);
     }
