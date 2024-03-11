@@ -79,17 +79,6 @@ public class CreateNewOrder extends Form{
             break;
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         return STATUS_PROGRAM.EXIT_LOOP;
     }
     

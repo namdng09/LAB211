@@ -35,10 +35,10 @@ public class OrderManager extends ListOrders{
     
     public void printTotalPrice(ArrayList<Fruit> listOfFruits) {
         double totalPrice = 0;
-            for (Fruit fruit : listOfFruits) {
-                totalPrice += fruit.getPrice() * fruit.getQuantity();
-            }
-            System.out.format("Total: %.2f$\n", totalPrice);
+        for (Fruit fruit : listOfFruits) {
+            totalPrice += fruit.getPrice() * fruit.getQuantity();
+        }
+        System.out.format("Total: %.2f$\n", totalPrice);
     }
     
     public void insertOrderList(ArrayList<Fruit> listOfFruit, String name) throws Exception{
