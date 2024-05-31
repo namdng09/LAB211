@@ -3,6 +3,13 @@
 Hi everyone! I create this repo to store all LAB exercises what i have learned.
 Hope you enjoy it!
 
+### How to clone this repository
+
+Go to terminal, move to the folder that you want to clone this repo
+```lua
+    git clone https://github.com/namdng09/LAB211.git
+```
+
 ## J1.L.P0021 - [ Create a Java console program to manage Students ](https://github.com/namdng09/LAB211/tree/main/J1.L.P0021)
 ## J1.L.P0022 - [ Create a Java console program to manage Candidates of company. ](https://github.com/namdng09/LAB211/tree/main/J1.L.P0022) 
 ## J1.L.P0023 - [ Create a Java console program to manage a Fruit Shop (Product and Shopping) ](https://github.com/namdng09/LAB211/tree/main/J1.L.P0023)
