@@ -5,7 +5,7 @@ Hope you enjoy it!
 
 ### How to clone this repository
 
-Go to terminal, move to the folder that you want to clone this repo
+Go to terminal, move to the folder that you want to clone this repository
 ```lua
     git clone https://github.com/namdng09/LAB211.git
 ```
